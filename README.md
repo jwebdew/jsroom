@@ -1,2 +1,5 @@
 # jsroom
 1/29개강 웹 중급 과정 수업 자료실
+
+1일차 자료 
+`https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/hwebdew/jsroom/tree/main/20240129`
