@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드 라이트모드</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let bg = document.getElementsByTagName('body')[0];
+            let btn = document.getElementsByTagName('button')[0];
+            
+            //조건문  if문
+            /* if(조건식) {
+                조건이 맞으면 실행코드 작성
+            } else {
+                조건이 맞지 않으면 실행코드 작성
+            }   */
+
+            btn.onclick = function(){
+                //alert()
+                if(getComputedStyle(bg).backgroundColor === 'rgb(255, 255, 255)') {
+                        bg.style.backgroundColor = '#000';
+                        //버튼에게 텍스트값을 라이트모드로 변경
+                        btn.innerText = '라이트모드';
+                } else {
+                    //body의 배경컬러값을 #fff(흰색)으로 변경
+                    bg.style.backgroundColor = '#fff';
+                    //버튼에게 텍스트값을 다크모드로 변경
+                    btn.innerText = '다크모드';
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button>다크모드</button>
+</body>
+</html>

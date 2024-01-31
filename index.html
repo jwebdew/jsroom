@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변경</title>
+</head>
+<body>
+    <h1>자바스크립트</h1>
+    <h2 class="text">자바스크립트2</h2>
+    <h3 id="text">자바스크립트3</h3>
+    <h4>자바스크립트4</h4>
+    <h5>자바스크립트5</h5>
+
+    <script>
+        document.getElementsByTagName('h1')[0].style.color = 'red';
+        document.getElementsByClassName('text')[0].style.backgroundColor = 'yellow';  
+        document.getElementById('text').style.fontSize = '40px';
+
+        document.getElementsByTagName('h4')[0].addEventListener('click', () => {
+            //h4에게 스타일중에서 컬러값 적용
+            document.getElementsByTagName('h4')[0].style.color = 'pink';
+        });
+
+        document.getElementsByTagName('h5')[0].innerHTML += '<div>내용추가</div>';   
+    </script>
+</body>
+</html>

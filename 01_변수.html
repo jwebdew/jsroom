@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+    <script>
+        window.onload = function(){
+            //변수 작성법 낙타표기법(카멜표기법)
+            //=>첫시작은 소문자, 두번째단어 시작부터는
+            //대문자로 시작
+            //첫 시작은 영문으로만 사용!
+            //영문뒤에 숫자, -, _
+            //변수선언 var, let, const
+            //변수선언 변수명 = 데이터값
+            let pTag = document.getElementsByTagName('p')[0];
+            pTag.innerHTML = '<i>이탤릭체추가</i>'; 
+            pTag.style.color = 'red';
+
+            let strong = document.getElementsByTagName('strong')[0];
+            strong.innerText = '<em>이탤릭체</em>';
+
+            let a = 400; //숫자
+            let b = 200; //숫자
+            let c = '200'; //문자 
+            c = '3000';
+
+            var ab = '100';
+            var ab = '2000';
+            ab = 700;
+
+            const ab = 100; 
+
+         
+
+            strong.innerHTML += a + c + pTag;
+
+
+        }
+    </script>
+</head>
+<body>
+    <p></p>
+    <strong></strong>
+
+</body>
+</html>
