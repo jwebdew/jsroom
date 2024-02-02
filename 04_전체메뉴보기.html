@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체메뉴보기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            height: 100px;
+            border-bottom: 1px solid #333;
+        }
+        header .inner {
+            max-width: 1280px;
+            width: calc(100% - 20px);
+            height: 100%;
+            background-color: antiquewhite;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        header .inner #gnb {
+            width: 100%;
+            position: absolute;
+            top: 110px;
+            left: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 50px;
+            display: none; /* 숨김 */
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            let menuBtn = document.getElementsByClassName('menu_open')[0];
+            let gnb = document.getElementById('gnb');
+
+            //메뉴아이콘을 클릭했을 때 실행
+            //gnb가 스타일값이 display가 none이면 block 설정
+            //gnb가 스타일값이 display가 block이면 none 설정
+             
+            //getComputedStyle() => 
+            //스타일을 읽어주는 역할(엘리먼트뿐만 아니라 
+            //style, css모든 스타일값을 읽어줌)
+
+            //style => 엘리먼트 있는 스타일만 읽어줌, 스타일 변경
+
+            menuBtn.onclick = function(){
+                if(getComputedStyle(gnb).display === 'none') {
+                    //조건이 맞으면 실행, 실행코드
+                    gnb.style.display = 'block';
+                }  else {
+                    //조건이 맞지 않을 때 gnb를 display : none으로 설정
+                    gnb.style.display = 'none';
+
+                }
+            }
+
+        }//script end
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>logo</h1>
+            <div class="menu_open">
+                <img src="img/icon-menu.svg" alt="메뉴보기">
+            </div><!-- .menu_open end -->
+
+            <nav id="gnb">
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JS</a></li>
+                </ul>
+            </nav><!-- #gnb end -->
+            
+
+        </div><!-- .inner end -->
+    </header>
+</body>
+</html>
