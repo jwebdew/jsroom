@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보변경</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .section01 {
+            max-width: 1280px;
+            width: calc(100% - 20px);
+            margin: 0 auto;
+        }
+        .section01 .list_wrap .list {
+            display: flex;
+            justify-content: space-between;
+            display: none;
+        }
+        .section01 .list_wrap .list.on {
+            display: flex;
+        }
+        .section01 .list_wrap .list .item {
+            width: calc(100% / 2 - 10px);
+        }
+        .section01 .list_wrap .list .item figure {}
+        .section01 .list_wrap .list .item figure img {
+            width: 100%;            
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            let list = document.querySelectorAll('.section01 .list');
+            let btn = document.querySelector('.section01 button');
+            let i = 0;
+
+            /* ⭐ 수업외 추가 */
+            let pageNum = document.querySelector('#num');
+            let pageAll = document.querySelector('.page_all');
+            
+            /* ⭐ 전체 페이지 적용 */
+            pageAll.innerHTML = '/ ' + list.length; //list가 가지는 전체 수
+
+
+            //btn을 클릭했을 때 실행
+            //list에게 클래스명 on이 순차적으로 추가
+            //나머지 list에게 클래스명 on은 삭제
+            btn.onclick = () => {
+                i++;
+                if(i >= list.length) {
+                    i = 0;
+                }
+                list.forEach(function(item){
+                    item.classList.remove('on');
+                });//list.forEach end
+
+                list[i].classList.add('on');
+
+                /* ⭐ 페이지 위치 변경 */
+                pageNum.innerHTML = i + 1; //i값은 0, 1, 2...순으로 가기 때문에 1을 더해줘서 페이지 맞춰줌
+                
+
+            }
+
+
+
+        }//script end
+    </script>
+</head>
+<body>
+    <section class="section01">
+        <h3>내일은 뭐하지??</h3>
+        <div class="list_wrap">
+            <div class="list on">
+                <div class="item">
+                    <figure>
+                        <img src="img/image01.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목</h4>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/image02.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목2</h4>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+
+            <div class="list">
+                <div class="item">
+                    <figure>
+                        <img src="img/image03.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목3</h4>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/image04.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목4</h4>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+
+            <div class="list">
+                <div class="item">
+                    <figure>
+                        <img src="img/image05.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목5</h4>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/image03.jpg" alt="">
+                    </figure>
+                    <h4>소제목, 이미지제목6</h4>
+                </div><!-- .item end -->
+            </div><!-- .list end / 3-->
+
+        </div><!-- .list_wrap end -->
+
+        <button>
+            새로보기
+            <span id="num">1</span>
+            <span class="page_all"></span>
+            <!-- 총페이지는 ??.innerHtml = list.length -->
+        </button>
+    </section><!-- .section01 end -->
+</body>
+</html>
